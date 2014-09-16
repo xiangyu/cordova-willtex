@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="app.willtex.cordova"
+	version="0.1.0">
+	<name>WillTex</name>
+	<description>Cordova plugin for WillTex app</description>
+	<license>MIT</license>
+	<keywords>willtex,tex,latex,math</keywords>
+
+	<js-module src="www/willtex.js" name="WillTex">
+		<clobbers target="cordova.plugins.WillTex" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="WillTex">
+				<param name="android-package" value="app.willtex.cordova.WillTex" />
+			</feature>
+		</config-file>
+		<source-file src="src/android/app/willtex/cordova/WillTex.java" target-dir="src/app/willtex/cordova" />
+	</platform>
+</plugin>
